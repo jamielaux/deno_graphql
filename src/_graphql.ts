@@ -37,6 +37,8 @@ export async function runHttpQuery(
     variableValues: params.variables,
     operationName: params.operationName,
   };
+  
+  console.log(graphQLArgs);
 
   return await graphql(graphQLArgs);
 }
