@@ -13,6 +13,9 @@ export function graphqlHttp(options: GraphQLOptions): HandlerFunc {
   if (!options) throw new Error("GraphQL Server requires options.");
 
   return async (context: Context) => {
+    
+    console.log(context);
+    
     const params: GraphQLParams = await context.body<GraphQLParams>();
 
     return await runHttpQuery(params, options, context);
